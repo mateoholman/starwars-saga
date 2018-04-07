@@ -5,7 +5,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <p>Use the Star Wars API</p>
+        <p>Use the Force</p>
+        <div>
+          {
+            this.props.starWars.people.map((person, i) => <h4 key={i}> {person.name} </h4>)
+          }
+        </div>
+        <button onClick={this.props.fetchStarWarsRequest}>Load More</button>
       </div>
     );
   }
